@@ -20,8 +20,27 @@ public class NameToHeight {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
-		// FIXME
-		throw new NotYetImplementedException();
+		Map<String, Integer> NgKim = new HashMap<>();
 
+		NgKim.put("Lucas", 168);
+		NgKim.put("Andrew", 72);
+		NgKim.put("Justin", 72);
+
+		System.out.println("Type in the name you want to know the height of. ");
+		String typedIn = in.next();
+
+
+
+		for (String name: NgKim.keySet()) {
+			while(!typedIn.equals("quit")) {
+				if(NgKim.get(typedIn) == null) {
+					System.out.println("There is no such name in the map. ");	
+				} else {
+					System.out.println(typedIn + ": " + NgKim.get(name));
+				}
+				System.out.println("Type in the name you want to know the height of. ");
+				typedIn = in.next();
+			}
+		}
 	}
 }
