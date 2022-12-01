@@ -31,17 +31,17 @@ public class WordCount {
 	public static Map<String, Integer> countWords(List<String> words) {
 
 		List<String> copy = new LinkedList<String>();
-		
+
 		Map<String, Integer> countWord = new HashMap<>();
 
-		
-		int count = 0;
-		for(int i = 0; i < copy.size(); i++) {
-			for (String word : words) {
-				if(copy.get(i) == word) {
-					count++;
-					countWord.put(word, count);
-				} 
+
+
+		for (String word : words) {
+			Integer count = countWord.get(word);
+			if (count == null) {
+				countWord.put(word, 1);
+			} else {
+				countWord.put(word, count + 1);
 			}
 		}
 
